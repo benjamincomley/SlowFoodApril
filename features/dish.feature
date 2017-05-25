@@ -38,4 +38,3 @@ Feature: Add dishes to menu
     And I should see "150"
     And I should see "2000"
     And I should not see "7 piece sushi"
-    And Show page
