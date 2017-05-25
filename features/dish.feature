@@ -22,11 +22,11 @@ Feature: Add dishes to menu
       | Sushi Menu              | Backyard Burger     |
 
     Given the following dishes exist
-      | name                    | description                             | price     | menu_name                 | restaurant           |
-      | 7 piece sushi           | Salmon and avocado sushi pieces         | 10.00     | Sushi Menu                | Goteborg Wok Sushi   |
-      | Giant Burger            | A burger with cheese and lettuce        | 1500.00   | Burgers                   | Backyard Burger      |
-      | Quarter Pounder Cheese  | A burger with too much cheese           | 2000.00   | Burgers                   | Backyard Burger      |
-      | Coffe                   | Not from Colombia                       | 2500.00   | Sushi Menu                | Backyard Burger      |
+      | name                    | description                             | price      | menu                      | restaurant           |
+      | 7 piece sushi           | Salmon and avocado sushi pieces         | 10         | Sushi Menu                | Goteborg Wok Sushi   |
+      | Giant Burger            | A burger with cheese and lettuce        | 150        | Burgers                   | Backyard Burger      |
+      | Quarter Pounder Cheese  | A burger with too much cheese           | 2000       | Burgers                   | Backyard Burger      |
+      | Coffe                   | Not from Colombia                       | 2500       | Sushi Menu                | Backyard Burger      |
 
   Scenario: Go to the restaurant's page
     Given I visit the landing page
@@ -35,5 +35,7 @@ Feature: Add dishes to menu
     Then I should see "Giant Burger"
     And I should see "A burger with cheese and lettuce"
     And I should see "Quarter Pounder Cheese"
-    And I should see "1500.00"
+    And I should see "150"
+    And I should see "2000"
     And I should not see "7 piece sushi"
+    And Show page

@@ -1,8 +1,9 @@
 Given(/^the following dishes exist$/) do |table|
   table.hashes.each do |hash|
     rest = Restaurant.find_by(name: hash["restaurant"])
-    hash["restaurant"] = rest.id
-    hash["menu_name"] = Menu.where(name: hash["menu_name"], restaurant_id: rest.id).first
+    hash["menu"] = Menu.where(name: hash["menu"], restaurant_id: rest.id).first
+    hash["price"] = hash["price"].to_i
+    restaurant = hash.delete("restaurant")
     FactoryGirl.create(:dish, hash)
   end
 end
