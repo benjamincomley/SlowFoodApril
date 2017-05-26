@@ -3,7 +3,7 @@ Given(/^the following dishes exist$/) do |table|
     rest = Restaurant.find_by(name: hash["restaurant"])
     hash["menu"] = Menu.where(name: hash["menu"], restaurant_id: rest.id).first
     hash["price"] = hash["price"].to_i
-    restaurant = hash.delete("restaurant")
+    hash.delete("restaurant")
     FactoryGirl.create(:dish, hash)
   end
 end

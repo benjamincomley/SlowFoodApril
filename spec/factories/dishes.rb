@@ -3,6 +3,6 @@ FactoryGirl.define do
     name "MyString"
     description "MyString"
     price 10
-    menu
+    association :menu
   end
 end
