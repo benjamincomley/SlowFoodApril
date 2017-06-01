@@ -20,9 +20,9 @@ class Owners::MenusController < ApplicationController
   end
 
   def update
-    @menu = Menu.find(params[:id])
-    @menu.name = menu_params[:name]
-    @menu.save
+    menu = Menu.find(params[:id])
+    menu.name = menu_params[:name]
+    menu.save
     redirect_to owners_restaurant_path(params[:restaurant_id])
     flash[:notice] = "Menu updated"
   end
